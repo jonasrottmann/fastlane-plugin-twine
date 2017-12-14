@@ -1,0 +1,17 @@
+lane :check do
+  twine_check(configuration_path: 'fastlane/example_config.json')
+end
+
+lane :validate do
+  twine_validate(configuration_path: 'fastlane/example_config.json')
+end
+
+lane :generate do
+  twine_generate(configuration_path: 'fastlane/example_config.json')
+end
+
+lane :all do
+  validate
+  generate
+  check
+end

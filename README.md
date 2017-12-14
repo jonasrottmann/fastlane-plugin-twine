@@ -1,5 +1,7 @@
 # twine plugin
 
+[![Travis CI](https://img.shields.io/travis/jonasrottmann/fastlane-plugin-twine.svg?style=flat)](https://travis-ci.org/jonasrottmann/fastlane-plugin-twine)
+
 ## Getting Started
 
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-twine`, add it to your project by running:

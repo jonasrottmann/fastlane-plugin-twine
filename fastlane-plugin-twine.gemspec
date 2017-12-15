@@ -6,21 +6,20 @@ Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-twine'
   spec.version       = Fastlane::Twine::VERSION
   spec.author        = 'Jonas Rottmann'
-  spec.email         = 'jonasrottmann@gmai.com'
+  spec.email         = 'jonasrottmann@gmail.com'
 
-  spec.summary       = 'Validates your twine file and checks' \
-                       'against your current localization files.'
-  spec.homepage      = 'https://github.com/jonasrottmann/fastlane-plugin-twinevalidator'
+  spec.summary       = 'A fastlane plugin providing actions related to twine'
+  spec.homepage      = 'https://github.com/jonasrottmann/fastlane-plugin-twine'
   spec.license       = 'MIT'
 
   spec.files         = Dir['lib/**/*'] + %w[README.md LICENSE]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'twine'
-  spec.add_dependency 'json'
   spec.add_dependency 'diffy'
+  spec.add_dependency 'json'
   spec.add_dependency 'json-schema'
+  spec.add_dependency 'twine'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'fastlane', '>= 2.26.1'

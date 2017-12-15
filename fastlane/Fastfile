@@ -12,6 +12,6 @@ end
 
 lane :all do
   validate
-  generate
   check
+  generate
 end

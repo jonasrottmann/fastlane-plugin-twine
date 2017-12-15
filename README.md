@@ -14,6 +14,8 @@ fastlane add_plugin twine
 
 This plugin provides easy access to common actions (e.g. generating the localization files) you would normally perform with [_twine_](https://github.com/scelis/twine) and adds some extra functionality.
 
+### Configuration file
+
 ### Actions
 
 #### `validate`

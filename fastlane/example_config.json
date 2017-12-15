@@ -1,9 +1,11 @@
 [
     {
+        "description": "Android & German",
         "source_path": "fastlane/example_twine.txt",
         "twine_args": "--lang de --format android",
         "destination_path": "fastlane/strings.xml"
     }, {
+        "description": "Apple & German",
         "source_path": "fastlane/example_twine.txt",
         "twine_args": "--lang de --format apple",
         "destination_path": "fastlane/Localizable.strings"

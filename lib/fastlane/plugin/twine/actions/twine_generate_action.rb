@@ -4,14 +4,19 @@ module Fastlane
       def self.run(params)
         Actions.verify_gem!('twine')
         Helper::TwineConfigParser.parse(params).each do |config|
-          Actions.sh(Helper::TwineCommandHelper.generate_command(
-                       params[:use_bundle_exec] && shell_out_should_use_bundle_exec?,
-                       config.source_path,
-                       config.destination_path,
-                       config.twine_args
-          ), error_callback: lambda { |e|
-                               UI.user_error!('Error while generating localization file ' + destination_path)
-                             })
+          if !File.exist?(config.source_path)
+            UI.user_error!("Source file " + config.source_path + " not found")
+          else
+            UI.message(config.description)
+            Actions.sh(Helper::TwineCommandHelper.generate_command(
+                         params[:use_bundle_exec] && shell_out_should_use_bundle_exec?,
+                         config.source_path,
+                         config.destination_path,
+                         config.twine_args
+            ), error_callback: lambda { |e|
+                                 UI.user_error!('Error while generating localization file ' + config.destination_path)
+                               })
+          end
         end
       end
 

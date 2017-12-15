@@ -16,6 +16,26 @@ This plugin provides easy access to common actions (e.g. generating the localiza
 
 ### Configuration file
 
+Check out the [example configuration](fastlane/example_config.json).
+
+JSON file scheme:
+
+```json
+[
+    {
+        "description": "",
+        "source_path": "",
+        "twine_args": "",
+        "destination_path": ""
+    }
+]
+```
+
+* `description`: This is optional but recommended to make the output more readable.
+* `source_path`: The path to your twine file. This is required.
+* `twine_args`: Additional args to pass to twine. For example: `--lang en --format android`
+* `destination_path`: The path where the generated translation file will be found. This is required.
+
 ### Actions
 
 #### `validate`

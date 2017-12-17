@@ -4,6 +4,7 @@
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-twine)
 [![Gem](https://img.shields.io/gem/v/fastlane-plugin-twine.svg?style=flat)](http://rubygems.org/gems/fastlane-plugin-twine)
 [![License](https://img.shields.io/github/license/jonasrottmann/fastlane-plugin-twine.svg)](https://github.com/jonasrottmann/fastlane-plugin-twine/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/jonasrottmann/fastlane-plugin-twine/badge.svg?branch=develop)](https://coveralls.io/github/jonasrottmann/fastlane-plugin-twine?branch=develop)
 
 
 ## Getting Started

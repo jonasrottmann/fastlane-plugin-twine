@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fastlane-plugin-twine (0.0.1)
+    fastlane-plugin-twine (1.0.0)
       diffy
       json
       json-schema

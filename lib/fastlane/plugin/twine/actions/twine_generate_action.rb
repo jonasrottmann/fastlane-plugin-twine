@@ -5,7 +5,7 @@ module Fastlane
         Actions.verify_gem!('twine')
         Helper::TwineConfigParser.parse(params).each do |config|
           if !File.exist?(config.source_path)
-            UI.user_error!("Source file " + config.source_path + " not found")
+            UI.user_error!("Source file #{config.source_path} not found")
           else
             UI.message(config.description)
             cmd = Helper::TwineCommandHelper.generate_command(config.source_path, config.destination_path, config.twine_args)
@@ -18,7 +18,7 @@ module Fastlane
       end
 
       def self.description
-        'Generates all localization files specified by yout configuration file'
+        'Generates all localization files specified by the configuration file'
       end
 
       def self.available_options
@@ -42,6 +42,10 @@ module Fastlane
 
       def self.is_supported?(_platform)
         true
+      end
+
+      def self.category
+        :building
       end
 
       def self.action_name

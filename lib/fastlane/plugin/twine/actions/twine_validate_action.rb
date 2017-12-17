@@ -5,19 +5,19 @@ module Fastlane
         Actions.verify_gem!('twine')
         Helper::TwineConfigParser.parse(params).map(&:source_path).uniq.each do |source_path|
           if !File.exist?(source_path)
-            UI.user_error!("Source file " + source_path + " not found")
+            UI.user_error!("Source file #{source_path} not found")
           else
             cmd = Helper::TwineCommandHelper.validate_command(source_path, params[:pedantic])
             cmd.prepend('bundle exec ') if params[:use_bundle_exec] && shell_out_should_use_bundle_exec?
             Actions.sh(cmd, error_callback: lambda { |result|
-              UI.test_failure!(result)
+              UI.build_failure!(result)
             })
           end
         end
       end
 
       def self.description
-        'Validates all twine source files from your config file'
+        'Validates all twine files mentioned in the config file'
       end
 
       def self.available_options
@@ -47,6 +47,10 @@ module Fastlane
 
       def self.is_supported?(_platform)
         true
+      end
+
+      def self.category
+        :building
       end
 
       def self.action_name

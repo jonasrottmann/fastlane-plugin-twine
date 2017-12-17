@@ -1,0 +1,7 @@
+[
+    {
+        "source_path": "./../spec/fixtures/hello_world_twine.txt",
+        "twine_args": "--land de --format android",
+        "destination_path": "./../spec/fixtures/strings.xml"
+    }
+]

@@ -7,13 +7,11 @@ module Fastlane
           if !File.exist?(source_path)
             UI.user_error!("Source file " + source_path + " not found")
           else
-            Actions.sh(Helper::TwineCommandHelper.validate_command(
-                         params[:use_bundle_exec] && shell_out_should_use_bundle_exec?,
-                         source_path,
-                         params[:pedantic]
-            ), error_callback: lambda { |result|
-                                 UI.test_failure!(result)
-                               })
+            cmd = Helper::TwineCommandHelper.validate_command(source_path, params[:pedantic])
+            cmd.prepend('bundle exec ') if params[:use_bundle_exec] && shell_out_should_use_bundle_exec?
+            Actions.sh(cmd, error_callback: lambda { |result|
+              UI.test_failure!(result)
+            })
           end
         end
       end

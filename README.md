@@ -36,14 +36,6 @@ JSON file scheme:
 * `twine_args`: Additional args to pass to twine. For example: `--lang en --format android`
 * `destination_path`: The path where the generated translation file will be found. This is required.
 
-### Actions
-
-#### `validate`
-
-#### `generate`
-
-#### `check`
-
 
 ## Example
 

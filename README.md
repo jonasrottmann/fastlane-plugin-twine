@@ -3,7 +3,7 @@
 [![Travis CI](https://img.shields.io/travis/jonasrottmann/fastlane-plugin-twine.svg?style=flat)](https://travis-ci.org/jonasrottmann/fastlane-plugin-twine)
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-twine)
 [![Gem](https://img.shields.io/gem/v/fastlane-plugin-twine.svg?style=flat)](http://rubygems.org/gems/fastlane-plugin-twine)
-[![License](https://img.shields.io/github/license/SiarheiFedartsou/fastlane-plugin-twine.svg)](https://github.com/jonasrottmann/fastlane-plugin-twine/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/jonasrottmann/fastlane-plugin-twine.svg)](https://github.com/jonasrottmann/fastlane-plugin-twine/blob/master/LICENSE)
 
 
 ## Getting Started

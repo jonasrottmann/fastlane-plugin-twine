@@ -9,17 +9,18 @@ module Fastlane
             UI.user_error!("Source file #{config.source_path} not found")
           else
             UI.message(config.description)
-            cmd = Helper::TwineCommandHelper.generate_command(config.source_path, config.destination_path + '.tmp', config.twine_args)
+            var temp_destination = config.destination_path + '.tmp'
+            cmd = Helper::TwineCommandHelper.generate_command(config.source_path, temp_destination, config.twine_args)
             cmd.prepend('bundle exec ') if params[:use_bundle_exec] && shell_out_should_use_bundle_exec?
-            Actions.sh(cmd, error_callback: lambda { |e|
+            Actions.sh(cmd, error_callback: lambda { |result|
               UI.user_error!('Error while generating localization file ' + config.destination_path)
             })
-            files_are_the_same = FileUtils.compare_file(config.destination_path, config.destination_path + '.tmp')
+            files_are_the_same = FileUtils.compare_file(config.destination_path, temp_destination)
             if params[:visualize_diff] && !files_are_the_same
               UI.message("#{config.destination_path}:")
-              puts Diffy::Diff.new(config.destination_path, config.destination_path + '.tmp', source: 'files').to_s(:color)
+              puts Diffy::Diff.new(config.destination_path, temp_destination, source: 'files').to_s(:color)
             end
-            File.delete(config.destination_path + '.tmp')
+            File.delete(temp_destination)
             UI.build_failure!("Localization file #{config.destination_path} differs from the source file #{config.source_path}") unless files_are_the_same
           end
         end

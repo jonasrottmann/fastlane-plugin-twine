@@ -4,15 +4,12 @@ module Fastlane
       def self.run(params)
         Actions.verify_gem!('twine')
         Helper::TwineConfigParser.parse(params).map(&:source_path).uniq.each do |source_path|
-          if !File.exist?(source_path)
-            UI.user_error!("Source file #{source_path} not found")
-          else
-            cmd = Helper::TwineCommandHelper.validate_command(source_path, params[:pedantic])
-            cmd.prepend('bundle exec ') if params[:use_bundle_exec] && shell_out_should_use_bundle_exec?
-            Actions.sh(cmd, error_callback: lambda { |result|
-              UI.build_failure!(result)
-            })
-          end
+          UI.user_error!("Source file #{source_path} not found") unless File.exist?(source_path)
+          cmd = Helper::TwineCommandHelper.validate_command(source_path, params[:pedantic])
+          cmd.prepend('bundle exec ') if params[:use_bundle_exec] && shell_out_should_use_bundle_exec?
+          Actions.sh(cmd, error_callback: lambda { |result|
+            UI.build_failure!(result)
+          })
         end
       end
 

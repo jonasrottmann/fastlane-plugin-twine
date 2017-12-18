@@ -1,12 +1,13 @@
 module Fastlane
   module Helper
     class TwineConfig
-      attr_reader :description, :source_path, :twine_args, :destination_path
+      attr_reader :description, :source_path, :twine_args, :destination_path, :temp_destination_path
       def initialize(description, source_path, twine_args, destination_path)
         @description = description
         @source_path = source_path
         @twine_args = twine_args
         @destination_path = destination_path
+        @temp_destination_path = destination_path + '.tmp'
       end
     end
 

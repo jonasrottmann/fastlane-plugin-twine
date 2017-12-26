@@ -45,7 +45,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
     equalizer (0.0.11)
-    excon (0.59.0)
+    excon (0.60.0)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
     faraday-cookie_jar (0.0.6)
@@ -53,8 +53,8 @@ GEM
       http-cookie (~> 1.0.0)
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
-    fastimage (2.1.0)
-    fastlane (2.69.3)
+    fastimage (2.1.1)
+    fastlane (2.70.3)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -126,7 +126,7 @@ GEM
     multipart-post (2.0.0)
     nanaimo (0.2.3)
     os (0.9.6)
-    parallel (1.12.0)
+    parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)
     plist (3.4.0)
@@ -188,7 +188,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tins (1.16.3)
-    tty-screen (0.6.3)
+    tty-screen (0.6.4)
     twine (1.0.1)
       rubyzip (~> 1.1)
       safe_yaml (~> 1.0)
@@ -203,7 +203,7 @@ GEM
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
     word_wrap (1.0.0)
-    xcodeproj (1.5.3)
+    xcodeproj (1.5.4)
       CFPropertyList (~> 2.3.3)
       claide (>= 1.0.2, < 2.0)
       colored2 (~> 3.1)
@@ -227,4 +227,4 @@ DEPENDENCIES
   rubocop (= 0.49.1)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
